@@ -345,3 +345,9 @@
 // const =
 
 // Ajax
+const ashu = requires("./secondfile");
+console.log("Hello World!!!!", ashu);
+
+const os = requires(os.freemen());
+console.log("OS Info: ", os);
+
