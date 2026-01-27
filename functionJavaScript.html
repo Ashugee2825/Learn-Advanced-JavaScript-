@@ -1,0 +1,182 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Function Learning</title>
+
+    <script type="text/javascript">
+// javascript objects leaing
+var tutorial = {
+    "topic" : "vivk",
+    "trainer" : "Ashu",
+    "mode ": " offline"
+};
+
+document.write("Topic : " + tutorial.topic + <br/>  "Tariner: " + )
+
+var txt =" ";
+var x;
+for (x in tutorial) {
+    txt += tutorial[x] + " , "; 
+}
+
+document.writeln(x)
+document.write(x)
+
+
+        //Event Learing 
+        var arr = new Array("1.png","2.png","3.png","4.png");
+        var i = 1;
+         var ref;
+
+         function picLibrary() {
+            document.images[0].src = arr[i];
+            i++
+            if ( i < 3)
+                i = 0;
+ 
+         }
+
+         function start() {
+            ref = setInterval("picLibrary() ", 1000);
+         }
+         function stop() {
+            clearInterval(ref)
+         }
+        function sayHello(name, age) {
+            if (name === "" || age === "") {
+                alert("Please enter both name and age");
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                name + " is " + age + " years old";
+        }
+
+        function Mouseover() 
+        {
+            document.images["img2"].src = "logo red.png "
+        }
+
+        function MouseOut() {
+                        document.images["img2"].src = "logo green.png "
+
+        }
+        function Load() {
+                        document.images["img2"].src = "logo red.png "
+
+        }
+    </script>
+</head>
+
+<body >
+
+    onLoad "start"
+
+//Event leraing 
+    onLoad
+    <p>Click the following button to call the function</p>
+
+    <form>
+        <input type="text" id="t1" placeholder="Enter name"><br><br>
+        <input type="number" id="t2" placeholder="Enter age"><br><br>
+
+        <input type="button"
+               value="Click Me"
+               onclick="sayHello(t1.value, t2.value)">
+    </form>
+
+    <p id="result"></p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Function & Event Learning</title>
+
+    <script>
+        // Object
+        var tutorial = {
+            topic: "JavaScript",
+            trainer: "Ashutosh",
+            mode: "Offline"
+        };
+
+        function showObject() {
+            let txt = "";
+            for (let key in tutorial) {
+                txt += key + " : " + tutorial[key] + "<br>";
+            }
+            document.getElementById("objectData").innerHTML = txt;
+        }
+
+        // Function
+        function sayHello(name, age) {
+            if (name === "" || age === "") {
+                alert("Please enter both name and age");
+                return;
+            }
+            document.getElementById("result").innerHTML =
+                name + " is " + age + " years old";
+        }
+
+        // Events
+        var images = ["1.png", "2.png", "3.png"];
+        var i = 0;
+        var ref;
+
+        function picLibrary() {
+            document.getElementById("slide").src = images[i];
+            i = (i + 1) % images.length;
+        }
+
+        function start() {
+            ref = setInterval(picLibrary, 1000);
+        }
+
+        function stop() {
+            clearInterval(ref);
+        }
+
+        function mouseOver() {
+            document.getElementById("logo").src = "logo_red.png";
+        }
+
+        function mouseOut() {
+            document.getElementById("logo").src = "logo_green.png";
+        }
+    </script>
+</head>
+
+<body onload="start()">
+
+<h3>Function Example</h3>
+<input type="text" id="t1" placeholder="Enter Name"><br><br>
+<input type="number" id="t2" placeholder="Enter Age"><br><br>
+<input type="button" value="Click Me" onclick="sayHello(t1.value, t2.value)">
+<p id="result"></p>
+
+<hr>
+
+<h3>Object Example</h3>
+<button onclick="showObject()">Show Object</button>
+<p id="objectData"></p>
+
+<hr>
+
+<h3>Image Slider</h3>
+<img id="slide" width="200"><br><br>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+
+<hr>
+
+<h3>Mouse Events</h3>
+<img id="logo" src="logo_green.png"
+     onmouseover="mouseOver()"
+     onmouseout="mouseOut()"
+     width="150">
+
+</body>
+</html>
